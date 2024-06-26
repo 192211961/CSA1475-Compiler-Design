@@ -1,0 +1,14 @@
+%{
+int vcount=0,ccount=0;
+%}
+%%
+^[-][0-9]+ {vcount++; printf("negative number is %s \n",yytext);}
+[0-9]+ {ccount++; printf("positive number is %s \n",yytext);}
+%%
+int yywrap(){}
+int main()
+{
+printf("enter the number");
+yylex();
+return 0;
+}
